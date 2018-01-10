@@ -5,7 +5,7 @@ DOCKER_REPO       ?= docker.io
 DOCKER_IMAGE_NAME ?= centos7-atomic
 DOCKER_IMAGE_TAG  ?= latest
 DOCKER_IMAGE      ?= $(DOCKER_REPO)/$(DOCKER_IMAGE_NAME):$(DOCKER_IMAGE_TAG)
-TAR               ?= centos7_atomic.tar
+TAR               ?= centos_atomic.tar
 
 _VM_DOMAIN        := centos_atomic_image
 _VM_POOL          := default
