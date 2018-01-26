@@ -44,7 +44,7 @@ part / --fstype ext4 --grow
 
 # Add nessasary repo for microdnf
 repo --name="microdnf" --baseurl="https://buildlogs.centos.org/cah-0.0.1" --cost=100
-repo --name="updates" --baseurl="http://mirror.centos.org/centos/7/updates/x86_64"
+repo --name="updates" --baseurl="http://ftp.byfly.by/pub/CentOS/7/updates/x86_64"
 
 %packages --excludedocs --instLangs=en --nocore
 bash
@@ -143,7 +143,7 @@ echo 'container' > /etc/yum/vars/infra
 echo "# fstab intentionally empty for containers" > /etc/fstab
 
 ## Remove some things we don't need
-rm -rf /boot /etc/firewalld  # unused directories
+rm -rf /etc/firewalld  # unused directories
 rm -rf /etc/sysconfig/network-scripts/ifcfg-*
 rm -fv usr/share/gnupg/help*.txt
 rm /usr/lib/rpm/rpm.daily

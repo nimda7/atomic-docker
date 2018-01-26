@@ -11,8 +11,8 @@ fi
 # Initialize variables
 INSTALL_PKGS1="libvirt-*";
 INSTALL_PKGS2="virt-install libguestfs libguestfs-tools-c";
-KS_FILE_URL="https://raw.githubusercontent.com/nimda7/atomic-docker/master/atomic-container.ks";
-CENTOS_INSTALL_SOURCE_URL=${CENTOS_INSTALL_SOURCE_URL-"http://mirror.centos.org/centos/7/os/x86_64"};
+KS_FILE_URL="https://raw.githubusercontent.com/nimda7/atomic-docker/test/atomic-container.ks";
+CENTOS_INSTALL_SOURCE_URL=${CENTOS_INSTALL_SOURCE_URL-"http://ftp.byfly.by/pub/CentOS/7/os/x86_64"};
 VM_DOMAIN=${VM_DOMAIN-"centos_atomic_image"};
 VM_NETWORK=${VM_NETWORK-"default"};
 IMAGE_TAR_NAME=${IMAGE_TAR_NAME-"centos_atomic.tar"};
