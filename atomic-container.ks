@@ -33,7 +33,8 @@ skipx
 # System timezone
 timezone --isUtc --nontp Etc/UTC
 # System bootloader configuration
-bootloader --disabled
+#bootloader --disabled
+bootloader --location=mbr --append="hdd=ide-scsi ide=nodma"
 # Clear the Master Boot Record
 zerombr
 # Partition clearing information
@@ -132,9 +133,9 @@ microdnf clean all
 LANG="en_US"
 echo "%_install_langs ${LANG}" > /etc/rpm/macros.image-language-conf
 
-for dir in locale i18n; do
-    find /usr/share/${dir} -mindepth 1 -maxdepth 1 -type d -not \( -name "${LANG}" -o -name POSIX \) -exec rm -rfv {} +
-done
+#for dir in locale i18n; do
+#    find /usr/share/${dir} -mindepth 1 -maxdepth 1 -type d -not \( -name "${LANG}" -o -name POSIX \) -exec rm -rfv {} +
+#done
 
 echo 'container' > /etc/yum/vars/infra
 

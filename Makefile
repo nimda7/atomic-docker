@@ -26,6 +26,9 @@ $(TAR):
 	@sudo VM_DOMAIN=$(_VM_DOMAIN) bash $(ROOT_DIR)/build.sh
 	$(call delete_libvirt_image)
 
+vm:
+	@sudo VM_DOMAIN=$(_VM_DOMAIN) bash $(ROOT_DIR)/build.sh
+
 clean/rootfs:
 	@rm -rf $(TAR)
 
