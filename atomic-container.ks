@@ -136,6 +136,11 @@ echo "%_install_langs ${LANG}" > /etc/rpm/macros.image-language-conf
 #    find /usr/share/${dir} -mindepth 1 -maxdepth 1 -type d -not \( -name "${LANG}" -o -name POSIX \) -exec rm -rfv {} +
 #done
 
+find /usr/share/i18n -type f -not \( -name "en_US" -o -name POSIX -o -name "UTF-8.gz" \) -exec rm -rfv {} +
+find /usr/share/locale -mindepth 1 -maxdepth 1 -type d -not \( -name "en_US" -o -name POSIX \) -exec rm -rfv {} +
+
+echo 'export LANG=en_US.UTF-8' > /etc/profile.d/locale.sh
+
 echo 'container' > /etc/yum/vars/infra
 
 # clear fstab
