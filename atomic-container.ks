@@ -33,8 +33,7 @@ skipx
 # System timezone
 timezone --isUtc --nontp Etc/UTC
 # System bootloader configuration
-#bootloader --disabled
-bootloader --location=mbr --append="hdd=ide-scsi ide=nodma"
+bootloader --disabled
 # Clear the Master Boot Record
 zerombr
 # Partition clearing information
@@ -143,7 +142,7 @@ echo 'container' > /etc/yum/vars/infra
 echo "# fstab intentionally empty for containers" > /etc/fstab
 
 ## Remove some things we don't need
-rm -rf /etc/firewalld  # unused directories
+rm -rf /boot /etc/firewalld  # unused directories
 rm -rf /etc/sysconfig/network-scripts/ifcfg-*
 rm -fv usr/share/gnupg/help*.txt
 rm /usr/lib/rpm/rpm.daily
