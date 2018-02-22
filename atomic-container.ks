@@ -106,6 +106,7 @@ microdnf
 -lzo
 -os-prober
 -pam
+-procps-ng
 -qrencode-libs
 -shadow-utils
 -snappy
@@ -122,8 +123,8 @@ microdnf
 %post --erroronfail --log=/mnt/sysimage/root/anaconda-post.log
 set -eux
 
-#microdnf remove acl audit-libs binutils cpio cracklib cracklib-dicts cryptsetup-libs dbus dbus-glib dbus-libs dbus-python device-mapper device-mapper-libs diffutils dracut e2fsprogs e2fsprogs-libs ebtables elfutils-libs firewalld firewalld-filesystem gdbm hardlink ipset ipset-libs iptables kmod kmod-libs kpartx libcap-ng libmnl libnetfilter_conntrack libnfnetlink libpwquality libselinux-python libsemanage libss libuser libutempter pam python python-decorator python-firewall python-gobject-base python-libs python-slip python-slip-dbus qemu-guest-agent qrencode-libs shadow-utils systemd systemd-libs ustr util-linux xz
-
+microdnf remove acl audit-libs binutils cpio cracklib cracklib-dicts cryptsetup-libs dbus dbus-glib dbus-libs dbus-python device-mapper device-mapper-libs diffutils dracut e2fsprogs e2fsprogs-libs ebtables elfutils-libs firewalld firewalld-filesystem gdbm hardlink ipset ipset-libs iptables kmod kmod-libs kpartx libcap-ng libmnl libnetfilter_conntrack libnfnetlink libpwquality libselinux-python libsemanage libss libuser libutempter pam procps-ng python python-decorator python-firewall python-gobject-base python-libs python-slip python-slip-dbus qemu-guest-agent qrencode-libs shadow-utils systemd systemd-libs ustr util-linux xz
+microdnf install procps
 microdnf clean all
 
 # Set install langs macro so that new rpms that get installed will
