@@ -106,7 +106,7 @@ microdnf
 -lzo
 -os-prober
 -pam
--procps-ng
+-procps
 -qrencode-libs
 -shadow-utils
 -snappy
