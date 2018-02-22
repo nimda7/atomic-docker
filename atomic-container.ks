@@ -106,7 +106,6 @@ microdnf
 -lzo
 -os-prober
 -pam
--procps
 -qrencode-libs
 -shadow-utils
 -snappy
@@ -123,7 +122,7 @@ microdnf
 %post --erroronfail --log=/mnt/sysimage/root/anaconda-post.log
 set -eux
 
-microdnf remove acl audit-libs binutils cpio cracklib cracklib-dicts cryptsetup-libs dbus dbus-glib dbus-libs dbus-python device-mapper device-mapper-libs diffutils dracut e2fsprogs e2fsprogs-libs ebtables elfutils-libs firewalld firewalld-filesystem gdbm hardlink ipset ipset-libs iptables kmod kmod-libs kpartx libcap-ng libmnl libnetfilter_conntrack libnfnetlink libpwquality libselinux-python libsemanage libss libuser libutempter pam python python-decorator python-firewall python-gobject-base python-libs python-slip python-slip-dbus qemu-guest-agent qrencode-libs shadow-utils systemd systemd-libs ustr util-linux xz
+#microdnf remove acl audit-libs binutils cpio cracklib cracklib-dicts cryptsetup-libs dbus dbus-glib dbus-libs dbus-python device-mapper device-mapper-libs diffutils dracut e2fsprogs e2fsprogs-libs ebtables elfutils-libs firewalld firewalld-filesystem gdbm hardlink ipset ipset-libs iptables kmod kmod-libs kpartx libcap-ng libmnl libnetfilter_conntrack libnfnetlink libpwquality libselinux-python libsemanage libss libuser libutempter pam python python-decorator python-firewall python-gobject-base python-libs python-slip python-slip-dbus qemu-guest-agent qrencode-libs shadow-utils systemd systemd-libs ustr util-linux xz
 
 microdnf clean all
 
@@ -131,10 +130,6 @@ microdnf clean all
 # only install langs that we limit it to.
 LANG="en_US"
 echo "%_install_langs ${LANG}" > /etc/rpm/macros.image-language-conf
-
-#for dir in locale i18n; do
-#    find /usr/share/${dir} -mindepth 1 -maxdepth 1 -type d -not \( -name "${LANG}" -o -name POSIX \) -exec rm -rfv {} +
-#done
 
 find /usr/share/i18n -type f -not \( -name "en_US" -o -name POSIX -o -name "UTF-8.gz" \) -exec rm -rfv {} +
 find /usr/share/locale -mindepth 1 -maxdepth 1 -type d -not \( -name "en_US" -o -name POSIX \) -exec rm -rfv {} +
