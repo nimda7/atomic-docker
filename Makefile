@@ -38,7 +38,7 @@ clean/image:
 	docker rmi -f $(DOCKER_IMAGE) || :
 
 image: rootfs
-	docker import $(TAR) $(DOCKER_IMAGE)
+	docker import -c "ENV LANG en_US.UTF-8" -c "ENV LC_ALL en_US.UTF-8" $(TAR) $(DOCKER_IMAGE)
 
 test: rootfs
 	@bash ./tests/run_tests.sh ${TAR}
