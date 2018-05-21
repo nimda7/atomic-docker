@@ -140,6 +140,12 @@ find /usr/share/locale -mindepth 1 -maxdepth 1 -type d -not \( -name "en_US" -o 
 
 echo 'export LANG=en_US.UTF-8' > /etc/profile.d/locale.sh
 
+cat > /root/.bashrc << EOF
+alias ll='ls -l --color=auto' 2>/dev/null
+alias l.='ls -d .* --color=auto' 2>/dev/null
+alias ls='ls --color=auto' 2>/dev/null
+EOF
+
 echo 'container' > /etc/yum/vars/infra
 
 # clear fstab
