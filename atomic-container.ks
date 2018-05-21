@@ -91,6 +91,7 @@ microdnf
 -kmod
 -kmod-libs
 -kpartx
+-less
 -libblkid
 -libmnl
 -libmount
@@ -99,7 +100,7 @@ microdnf
 -libpwquality
 -libsemanage
 -libss # used by e2fsprogs
--libteam
+#-libteam
 -libuser
 -libutempter
 -libuuid
@@ -114,8 +115,10 @@ microdnf
 -systemd-libs
 -sysvinit-tools
 -tar
--teamd
+#-teamd
+-tree
 -ustr
+-vi
 
 %end
 
